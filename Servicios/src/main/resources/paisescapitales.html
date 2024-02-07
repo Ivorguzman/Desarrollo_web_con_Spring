@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Servicios</title>
+</head>
+<body>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th><h1>País</h1></th>
+                <th><h1>Capital</h1></th>
+        <tbody th:each="paisCapital :${paisesCapitales}">
+            <tr>
+                <th>
+                    <h3>
+                        <span th:text="${paisCapital.pais}"></span>
+                    </h3>
+                </th>
+
+                <th>
+                    <h3>
+                        <span th:text="${paisCapital.capital}"></span>
+                    </h3>
+
+                </th>
+            </tr>
+        </tbody>
+
+    </table>
+</body>
+</html>

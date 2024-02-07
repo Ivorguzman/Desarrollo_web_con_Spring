@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Servicios</title>
+</head>
+<body>
+  <h1>Listado de países y capitales</h1>
+  <table>
+    <tr>
+      <th>País</th>
+      <th>Capital</th>
+    </tr>
+    <tr th:each="entry : ${paisesCapitales}">
+      <td th:text="${entry.key}"></td>
+      <td th:text="${entry.value.pais}"></td>
+      <td th:text="${entry.value.capital}"></td>
+    </tr>
+    <tr th:each="clave : ${paisesCapitales}">
+      <td th:text="${clave}"></td>
+      <td th:text="${paisesCapitales.get(clave).getPais()}"></td>
+      <td th:text="${paisesCapitales.get(clave).getCapital()}"></td>
+    </tr>
+  </table>
+</body>
+
+</html>

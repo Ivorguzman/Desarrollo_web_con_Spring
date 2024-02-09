@@ -102,7 +102,7 @@ class PostController {
 	@PostMapping("/addpersona")
 	public ModelAndView Resultados(@ModelAttribute("persona") Persona persona) { // Capturar los datos del fomulario recojidos de la clase Persona con =>
 																				 // [th:object="${persona}]
-		System.out.println("persona ==>" + persona);
+		// System.out.println("persona ==>" + persona);
 
 		ModelAndView mav = new ModelAndView("resultados.html");// Retornamos la vista
 		mav.addObject("persona", persona); //

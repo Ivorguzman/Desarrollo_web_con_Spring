@@ -16,6 +16,7 @@ Tecnologías Utilizadas- Spring Boot: Framework para el desarrollo de aplicacion
 - Spring Security: Para la autenticación y autorización.
 - Spring Data JPA: Para la interacción con la base de datos.
 - MySQL: Base de datos relacional para almacenar la información.
+-  Bootstrap versión 3.3.7: mejorar la interfaz de usuario
 
 Instrucciones de Uso- Clona este repositorio en tu máquina local.
 - Configura la conexión a la base de datos MySQL en el archivo application.properties.

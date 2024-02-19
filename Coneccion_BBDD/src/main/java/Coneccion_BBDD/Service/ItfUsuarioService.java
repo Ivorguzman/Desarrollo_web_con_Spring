@@ -2,7 +2,7 @@ package Coneccion_BBDD.Service;
 
 import java.util.List;
 
-import Coneccion_BBDD.entity.Usuario;
+import Coneccion_BBDD.model.Usuario;
 
 
 public interface ItfUsuarioService {

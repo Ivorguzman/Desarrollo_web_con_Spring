@@ -5,61 +5,61 @@
 <title>Listado de usuarios</title>
 </head>
 <body>
-	<h1>Listado de usuarios</h1>
-	<table border="1">
-		<tr>
-			<th>Id</th>
-			<th>Nombres</th>
-			<th>Apellidos</th>
-			<th>Teléfono</th>
-			<th>Correo</th>
-			<th>Dirección</th>
-		</tr>
-		<tr th:each="thUsuario : ${thUsuario}">
-			<!-- Modelo de datos (usuario) -->
-			<td th:text="${thUsuario.id}"></td>
-			<td th:text="${thUsuario.nombres}"></td>
-			<td th:text="${thUsuario.apellidos}"></td>
-			<td th:text="${thUsuario.telefono}"></td>
-			<td th:text="${thUsuario.correo}"></td>
-			<td th:text="${thUsuario.direccion}"></td>
-		</tr>
-	</table>
-
-
-
-	<h1>Agregar usuario</h1>
-	<form action="#" th:action="@{/user/add}" th:object="${thUser}" method="post">
-
-		<fieldset>
-		<legend> Introdusca Los Siguientes datos</legend>
-			<p>
-				Id:       <input type="number" th:field="*{id}" />
-			</p>
-			<p>
-				Nombre:   <input type="text" th:field="*{nombres}" />
-			</p>
-			<p>
-				Apellidos: <input type="text" th:field="*{apellidos}" />
-			</p>
-			<p>
-				Teléfono:  <input type="tel" name="telf" th:field="*{telefono}" />
-			</p>
-			<p>
-				Correo:   <input type="email" name="email " th:field="*{correo}" />
-			</p>
-			<p>
-				Dirección: <input type="text" th:field="*{direccion}" />
-			</p>
-			<p>
-				<input type="submit" value="Guardar" />
-			</p>
-		</fieldset>
-	</form>
+  <h1>Listado de usuarios</h1>
+  <table border="1">
+    <tr>
+      <th>Id</th>
+      <th>Nombres</th>
+      <th>Apellidos</th>
+      <th>Teléfono</th>
+      <th>Correo</th>
+      <th>Dirección</th>
+    </tr>
+    <tr th:each="ThElUsuario : ${thUsuario}">
+      <!-- Modelo de datos (usuario) -->
+      <td th:text="${ThElUsuario.id}"></td>
+      <td th:text="${ThElUsuario.nombres}"></td>
+      <td th:text="${ThElUsuario.apellidos}"></td>
+      <td th:text="${ThElUsuario.telefono}"></td>
+      <td th:text="${ThElUsuario.correo}"></td>
+      <td th:text="${ThElUsuario.direccion}"></td>
+    </tr>
+  </table>
+  <h1>Agregar usuario</h1>
+  <form action="#" th:action="@{/user/add}" th:object="${thUser}" method="post">
+    <fieldset>
+      <legend> Introdusca Los Siguientes datos</legend>
+      <p>
+        Id:
+        <input type="number" th:field="*{id}" />
+      </p>
+      <p>
+        Nombre:
+        <input type="text" th:field="*{nombres}" />
+      </p>
+      <p>
+        Apellidos:
+        <input type="text" th:field="*{apellidos}" />
+      </p>
+      <p>
+        Teléfono:
+        <input type="tel" name="telf" th:field="*{telefono}" />
+      </p>
+      <p>
+        Correo:
+        <input type="email" name="email " th:field="*{correo}" />
+      </p>
+      <p>
+        Dirección:
+        <input type="text" th:field="*{direccion}" />
+      </p>
+      <p>
+        <input type="submit" value="Guardar" />
+      </p>
+    </fieldset>
+  </form>
 </body>
 </html>
-
-
 <!--
   Se trata de una plantilla HTML que usa Thymeleaf, un motor de plantillas que se integra con Spring MVC y permite crear páginas web dinámicas usando expresiones y atributos especiales. El código hace lo siguiente:
 

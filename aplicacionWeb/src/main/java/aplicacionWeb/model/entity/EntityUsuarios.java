@@ -1,4 +1,4 @@
-package Coneccion_BBDD.entity;
+package aplicacionWeb.model.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -6,106 +6,112 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity // Anotacion de jpa
-@Table(name = "usuario") // Anotacion de jpa
-public class Usuario { // representa el nombre de la tabla en la base de datos
+@Entity
+@Table(name = "usuario")
+public class EntityUsuarios {
 
 	@Id
-	@GeneratedValue // Genera automaticamente el numero continuo del id
+	@GeneratedValue
 	@Column(name = "id")
-	private int id;// representa la columna en la base de datos
+	private int id;
 
-
-	@Column(name = "nombres", length = 50)
-	private String nombres;// representa la columna en la base de datos
-
+	@Column(name = "nombre", length = 50)
+	private String nombre;
 
 	@Column(name = "apellidos", length = 50)
-	private String apellidos;// representa la columna en la base de datos
-
+	private String apellidos;
 
 	@Column(name = "telefono", length = 13)
-	private String telefono;// representa la columna en la base de datos
-
+	private String telefono;
 
 	@Column(name = "correo", length = 100)
-	private String correo;// representa la columna en la base de datos
-
+	private String correo;
 
 	@Column(name = "direccion", length = 150)
-	private String direccion;// representa la columna en la base de datos
+	private String direccion;
 
 
 
-	public Usuario(int id, String nombres, String apellidos, String telefono, String correo, String direccion) {
-		// public Usuario(int id, String nombres, String apellidos, String telefono, String correo) {
+
+	public EntityUsuarios(int id, String nombre, String apellidos, String telefono, String correo, String direccion) {
 		this.id = id;
-		this.nombres = nombres;
+		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.telefono = telefono;
 		this.correo = correo;
 		this.direccion = direccion;
 
+		System.out.println("estoy en contructor CON parametros  ");
+		System.out.println(this.id);
+		System.out.println(this.nombre);
+		System.out.println(this.apellidos);
+		System.out.println(this.correo);
+		System.out.println(this.direccion);
+
 	}
 
 
+	public EntityUsuarios( ) {
 
-	public Usuario( ) {
+		System.out.println("estoy en contructor sin parametros  ");
+		System.out.println(this.id);
+		System.out.println(this.nombre);
+		System.out.println(this.apellidos);
+		System.out.println(this.correo);
+		System.out.println(this.direccion);
+
 
 	}
-
-
 
 
 	public int getId() {
 		return this.id;
 	}
 
+
 	public void setId(int id) {
 		this.id = id;
 	}
 
 
-
-
-	public String getNombres() {
-		return this.nombres;
-	}
-
-	public void setNombres(String nombres) {
-		this.nombres = nombres;
+	public String getNombre() {
+		return this.nombre;
 	}
 
 
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 
 
 	public String getApellidos() {
 		return this.apellidos;
 	}
 
+
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
-
-
 
 
 	public String getTelefono() {
 		return this.telefono;
 	}
 
+
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
+
 
 	public String getCorreo() {
 		return this.correo;
 	}
 
+
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
-
 
 
 	public String getDireccion() {
@@ -113,18 +119,14 @@ public class Usuario { // representa el nombre de la tabla en la base de datos
 	}
 
 
-
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
 
 
-
-
-
-
-
 }
+
+
 
 /*
  * La palabra clave import indica que se importan clases o paquetes que se necesitan para usar JPA.
@@ -193,5 +195,24 @@ public class Usuario { // representa el nombre de la tabla en la base de datos
  * mayúscula. Estos métodos son obligatorios para que JPA pueda leer y escribir los valores de los
  * atributos de la clase.
  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

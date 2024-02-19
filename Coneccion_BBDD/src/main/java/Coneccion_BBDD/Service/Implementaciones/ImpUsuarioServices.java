@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import Coneccion_BBDD.Repository.ItfUsarioRepository;
 import Coneccion_BBDD.Service.ItfUsuarioService;
-import Coneccion_BBDD.entity.Usuario;
+import Coneccion_BBDD.model.Usuario;
 
 
 @Service("itfUsuarioService") // lógica de negocio o la manipulación de datos.

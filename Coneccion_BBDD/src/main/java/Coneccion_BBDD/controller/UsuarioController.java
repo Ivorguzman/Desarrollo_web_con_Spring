@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import Coneccion_BBDD.Service.ItfUsuarioService;
-import Coneccion_BBDD.entity.Usuario;
+import Coneccion_BBDD.model.Usuario;
 
 
 
@@ -25,11 +25,11 @@ public class UsuarioController {
 	@GetMapping("/list")
 	public ModelAndView listarUsuarios() {
 
-
-
 		ModelAndView mav = new ModelAndView("list.html");
 		mav.addObject("thUsuario", this.itfUsuarioService.listAllUsuario());
 		mav.addObject("thUser", new Usuario());
+		return mav;
+
 		/*
 		 * La línea de código; mav.addObject("thUser", new Usuario()); Vamos a desglosarla:
 		 * 
@@ -49,14 +49,19 @@ public class UsuarioController {
 		 * para mostrar información relacionada con el usuario.
 		 * 
 		 */
-		return mav;
-
 	}
 
 
 	@PostMapping("/add")
 	public String agregarUsuario(@ModelAttribute(name = "VcUsuarios") Usuario elUsuario) {
+
+		this.itfUsuarioService.addUsuario(elUsuario);
+
+		return "redirect:/user/list";
+
 		/*
+		 * Nota: name = "VcUsuarios" no es utilizada;
+		 * 
 		 * La línea public String agregarUsuario(@ModelAttribute(name = "VcUsuarios") Usuario
 		 * elUsuario) Vamos a desglosarla:
 		 * 
@@ -81,15 +86,9 @@ public class UsuarioController {
 		 * contexto específico de una aplicación web.
 		 * 
 		 */
-		this.itfUsuarioService.addUsuario(elUsuario);
-
-		return "redirect:/user/list";
-
-
-
 	}
-
 }
+
 
 /*
  * Se trata de un controlador de Spring MVC, que es un framework para crear aplicaciones web basadas
@@ -126,8 +125,5 @@ public class UsuarioController {
  * redirigir la petición, que en este caso es "/user/list", para mostrar la lista actualizada de
  * usuarios.
  */
-
-
-
 
 

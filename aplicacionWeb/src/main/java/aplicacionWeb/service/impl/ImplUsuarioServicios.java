@@ -31,6 +31,9 @@ public class ImplUsuarioServicios implements ItfUsuariosService {
 	 */
 	@Autowired
 	@Qualifier("itfUsuarioRepository")
+
+
+
 	private ItfUsuarioRepository itfUsuarioRepository;
 
 
@@ -99,22 +102,23 @@ public class ImplUsuarioServicios implements ItfUsuariosService {
 		return users;
 	}
 
-
-
-
 	@Override
-	// Busca y devuelve un usuario por su ID de la base de datos.
+	// Busca y devuelve un usuario po r su ID de la base de datos por medio de la entity.
 	public EntityUsuarios findEntityUsuariosById(int id) {
+
 		return this.itfUsuarioRepository.findById(id);
 	}
-
-
-
 
 	@Override
 	public void removeEntityUsuariosById(int id) {
 
+		EntityUsuarios us = this.findEntityUsuariosById(id);
 
+		
+		if (null != us){
+
+			this.itfUsuarioRepository.delete(us);
+		}
 	}
 
 

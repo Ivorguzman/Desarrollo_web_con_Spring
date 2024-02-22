@@ -8,13 +8,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import aplicacionWeb.model.entity.EntityUsuarios;
 import aplicacionWeb.service.ItfUsuariosService;
 
 @Controller
- @RequestMapping("/usuarios")
+@RequestMapping("/usuarios")
 public class UsuariosController {
 
 
@@ -25,12 +26,46 @@ public class UsuariosController {
 
 
 
-
 	@GetMapping("/form")
-	public String UsersForm(Model modelo) {
-		modelo.addAttribute("MaaUsuarios", new EntityUsuarios());
+	public String UsersForm(Model modelo, @RequestParam(name = "id", required = true) int id) {
+
+		EntityUsuarios us = new EntityUsuarios();
+
+
+
+		if (id != 0){
+
+			us = this.inItfUsuariosService.findEntityUsuariosById(id);
+
+
+			System.out.println("**************  id!=0 ********************");
+			System.out.println("Este es la variable us ===> " + us.getId());
+			System.out.println("Este es la variable us ===> " + us.getNombre());
+			System.out.println("Este es la variable us ===> " + us.getApellidos());
+			System.out.println("Este es la variable us ===> " + us.getTelefono());
+			System.out.println("Este es la variable us ===> " + us.getCorreo());
+			System.out.println("Este es la variable us ===> " + us.getDireccion());
+
+
+
+
+		}
+		System.out.println("**************  id = 0 ********************");
+
+		System.out.println("us.hashCode() ===> " + us.hashCode());
+		System.out.println("Este es la variable us ===> " + us.getId());
+		System.out.println("Este es la variable us ===> " + us.getNombre());
+		System.out.println("Este es la variable us ===> " + us.getApellidos());
+		System.out.println("Este es la variable us ===> " + us.getTelefono());
+		System.out.println("Este es la variable us ===> " + us.getCorreo());
+		System.out.println("Este es la variable us ===> " + us.getDireccion());
+
+		// modelo.addAttribute("MaaUsuarios", new EntityUsuarios());
+		modelo.addAttribute("MaaUsuarios", us);
 		return "usersForm.html";
 	}
+
+
 
 
 
@@ -56,18 +91,14 @@ public class UsuariosController {
 
 	}
 
+	@GetMapping("/remove")
+	public ModelAndView removeUsurios(@RequestParam(name = "id", required = true) int id) {
+
+		this.inItfUsuariosService.removeEntityUsuariosById(id);
+
+		return this.ListadoUsers();
+	}
+
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 

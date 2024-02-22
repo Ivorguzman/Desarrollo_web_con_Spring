@@ -41,24 +41,13 @@ public class EntityUsuarios {
 		this.correo = correo;
 		this.direccion = direccion;
 
-		System.out.println("estoy en contructor CON parametros  ");
-		System.out.println(this.id);
-		System.out.println(this.nombre);
-		System.out.println(this.apellidos);
-		System.out.println(this.correo);
-		System.out.println(this.direccion);
 
 	}
 
 
 	public EntityUsuarios( ) {
 
-		System.out.println("estoy en contructor sin parametros  ");
-		System.out.println(this.id);
-		System.out.println(this.nombre);
-		System.out.println(this.apellidos);
-		System.out.println(this.correo);
-		System.out.println(this.direccion);
+
 
 
 	}

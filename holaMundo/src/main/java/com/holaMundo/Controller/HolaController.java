@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HolaController {
 
 	// @RequestMapping("/home") // Para indicar ruta(path) a nivel de metodo [ en desuso ]
+	// @GetMapping("/") // Para indicar ruta(path) a nivel de metodo
 	@GetMapping("/home") // Para indicar ruta(path) a nivel de metodo
 	public String home() {
 		return "holaMundo";

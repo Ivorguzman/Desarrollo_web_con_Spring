@@ -27,7 +27,7 @@ public class UsuariosController {
 
 
 	@GetMapping("/form")
-	public String UsersForm(Model modelo, @RequestParam(name = "id", required = true) int id) {
+	public String UsersForm(Model modelo, @RequestParam(required = true) int id) {
 
 		EntityUsuarios us = new EntityUsuarios();
 
@@ -72,7 +72,7 @@ public class UsuariosController {
 
 
 	@PostMapping("/add")
-	public String addUsuarios(@ModelAttribute(name = "usuarios") EntityUsuarios usuarios) {
+	public String addUsuarios(@ModelAttribute EntityUsuarios usuarios) {
 
 		this.inItfUsuariosService.AddUsuarios(usuarios);
 		return "redirect:/usuarios/list";
@@ -92,7 +92,7 @@ public class UsuariosController {
 	}
 
 	@GetMapping("/remove")
-	public ModelAndView removeUsurios(@RequestParam(name = "id", required = true) int id) {
+	public ModelAndView removeUsurios(@RequestParam(required = true) int id) {
 
 		this.inItfUsuariosService.removeEntityUsuariosById(id);
 

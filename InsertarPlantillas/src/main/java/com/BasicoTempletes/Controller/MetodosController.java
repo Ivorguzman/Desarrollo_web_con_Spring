@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class MetodosController {
 
 	// Metodo 1
+	// @GetMapping("/metodo1") // Forma ya en deshuso
 	@RequestMapping(value = "/metodo1", method = RequestMethod.GET) // Forma ya en deshuso
 	public String Metodo1() {
 		return "vista1"; // Busca laparina en:

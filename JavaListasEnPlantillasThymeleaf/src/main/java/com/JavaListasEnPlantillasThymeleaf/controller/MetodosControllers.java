@@ -46,18 +46,18 @@ public class MetodosControllers {
 	 * acceder desde la vista usando la expresión personaEnClaseLista2osuspropiedades,como{personaEnClaseLista2.nombre} o ${personaEnClaseLista2.telefono}.
 	 */
 	// Metodo 2 (/metodo2)
-	@GetMapping("/metodo2") public ModelAndView metodo2() {
+	@GetMapping("/metodo2")
+	public ModelAndView metodo2() {
 		ModelAndView modeloVistaControlador = new ModelAndView("vista2");
 		modeloVistaControlador.addObject("personaEnClaseLista2", new PersonaLista("Guzmán Ivor", 444555666));
 		return modeloVistaControlador;
 	}
 	
-
-	
 	
 	
 	// Metodo1 (/metodo3)
-	@GetMapping("/metodo3") public String metodo3(Model modelo) {
+	@GetMapping("/metodo3")
+	public String metodo3(Model modelo) {
 		modelo.addAttribute("listaPersona", this.getPersonas());
 		return "vista3";
 	}
@@ -65,7 +65,8 @@ public class MetodosControllers {
 	
 	
 	// Metodo 4(/metodo4)
-	@GetMapping("/metodo4") public ModelAndView metodo4() {
+	@GetMapping("/metodo4")
+	public ModelAndView metodo4() {
 		ModelAndView modeloVistaControlador = new ModelAndView("vista3");
 		modeloVistaControlador.addObject("listaPersona", this.getPersonas());
 			return modeloVistaControlador;
